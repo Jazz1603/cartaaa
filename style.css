@@ -1,0 +1,135 @@
+* {
+  min-width: 0;
+  font: inherit;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+body {
+  background-color: #d1d0d0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container-letter {
+  position: relative;
+}
+
+.cover {
+  position: absolute;
+  border-left: 250px solid transparent;
+  border-right: 250px solid transparent;
+  border-top: 150px solid #689db6;
+  border-bottom: 150px solid transparent;
+  transition: opacity 0.5s;
+  transform-origin: top;
+}
+.paper {
+  position: absolute;
+  padding: 0.5rem;
+  line-height: 1.5rem;
+  right: 20px;
+  z-index: -1;
+  background: #cae5fd;
+  width: 460px;
+  height: 270px;
+  transition: all 0.6s opacity 0.5s;
+}
+.letter {
+  border-left: 250px solid #7bbddb;
+  border-right: 250px solid #7bbddb;
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid #7bbddb;
+}
+.options {
+  display: flex;
+  gap: 5rem;
+  & button {
+    color: #1d1d1d;
+    font-weight: 600;
+    border-radius: 3px;
+    background: #7bbddb;
+    padding: 0.5rem 1rem;
+    border: 1px solid #000000;
+    cursor: pointer;
+  }
+  & button:hover {
+    background: #575757;
+    color: rgb(255, 255, 255);
+    border: 1px solid #000000;
+  }
+}
+.open-cover {
+  transform: rotatex(180deg);
+  opacity: 0;
+}
+.open-paper {
+  animation: openPaper 0.5s forwards;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+@keyframes openPaper {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -120px;
+  }
+}
+.close-paper {
+  animation: closePaper 0.5s forwards;
+}
+@keyframes closePaper {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+.heart {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 46.5%;
+  margin: auto;
+  font-size: 3rem;
+  color: #fe3334;
+  animation: crecer 1s forwards;
+}
+@keyframes crecer {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 3;
+    opacity: 0;
+  }
+}
